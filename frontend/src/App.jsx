@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Intro from './components/Intro';
+import { TaskProvider } from './components/TaskContext';
+import TaskList from './pages/TaskList';
+import AddTaskForm from './pages/AddTaskForm';
 
 function App() {
 	const [theme, setTheme] = useState(null);
@@ -72,6 +75,19 @@ function App() {
 		<div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
 			<div className="max-w-5xl w-11/12 mx-auto">
 				<Intro theme={theme} />
+				<div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
+					<div className="max-w-xl w-11/12 mx-auto">
+					<TaskProvider>
+						<div className='flex items-center justify-center flex-col text-center pt-20 pb-6'>
+						<h1 className='text-4xl md:text-7xl mb-1 md:mb-3'>
+							Task List App
+						</h1>
+						<AddTaskForm />
+						<TaskList />
+						</div>
+					</TaskProvider>
+					</div>
+				</div>
 				<Contact />
 				<Footer />
 			</div>
