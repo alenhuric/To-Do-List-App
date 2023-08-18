@@ -15,9 +15,9 @@ function AddTaskForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-3 gap-2">
         <input
-          className='p-2 bg-transparent border-2 rounded-md focus:outline-none'
+          className='col-span-2 p-2 bg-transparent border-2 rounded-md focus:outline-none'
           type="text"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}

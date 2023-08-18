@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const Intro = ({ theme }) => {
   const logoSrc = theme === 'dark' ? '/assets/logo-white.png' : '/assets/logo-black.png';
-  const text = 'text';
+  const text = 'To-Do List';
 
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -48,12 +48,6 @@ const Intro = ({ theme }) => {
           </span>
         ))}
       </h1>
-      <p className='text-base md:text-xl mb-3 font-medium'>
-        text.
-      </p>
-      <p className='text-sm max-w-xl mb-6 font-bold'>
-        text.
-      </p>
       <style>
         {`
           @keyframes bounceEffect {

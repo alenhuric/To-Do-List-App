@@ -78,12 +78,9 @@ function App() {
 				<div className="bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-300 min-h-screen font-inter">
 					<div className="max-w-xl w-11/12 mx-auto">
 					<TaskProvider>
-						<div className='flex items-center justify-center flex-col text-center pt-20 pb-6'>
-						<h1 className='text-4xl md:text-7xl mb-1 md:mb-3'>
-							Task List App
-						</h1>
-						<AddTaskForm />
-						<TaskList />
+						<div className='flex items-center justify-center flex-col text-center'>
+							<AddTaskForm />
+							<TaskList />
 						</div>
 					</TaskProvider>
 					</div>
