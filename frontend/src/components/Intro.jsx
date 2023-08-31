@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const Intro = ({ theme }) => {
-  const logoSrc = theme === 'dark' ? '/assets/logo-white.png' : '/assets/logo-black.png';
-  const text = 'To-Do List';
+  const logoSrc =
+    theme === "dark" ? "/assets/logo-white.png" : "/assets/logo-black.png";
+  const text = "To-Do List";
 
   const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -20,7 +21,7 @@ const Intro = ({ theme }) => {
       setTimeout(() => {
         setCurrentLetterIndex(0);
         setIsPaused(false);
-      }, 7000); 
+      }, 7000);
     }
 
     return () => clearInterval(intervalId);
@@ -33,21 +34,26 @@ const Intro = ({ theme }) => {
   }, [currentLetterIndex, text.length]);
 
   return (
-    <div className='flex items-center justify-center flex-col text-center pt-20 pb-6'>
-      <h1 className='text-4xl md:text-7xl mb-1 md:mb-3 font-bold'>
-        {text.split('').map((letter, index) => (
+    <div className="flex items-center justify-center flex-col text-center pt-20 pb-6">
+      <h1 className="text-4xl md:text-7xl mb-1 md:mb-3 font-bold">
+        {text.split("").map((letter, index) => (
           <span
             key={index}
-            className={`animated-letter ${index === currentLetterIndex ? 'text-violet-500' : ''}`}
+            className={`animated-letter ${
+              index === currentLetterIndex ? "text-violet-500" : ""
+            }`}
             style={{
               animationDelay: `${index * 100}ms`,
-              fontSize: index === currentLetterIndex ? '3rem' : 'inherit',
+              fontSize: index === currentLetterIndex ? "3rem" : "inherit",
             }}
           >
             {letter}
           </span>
         ))}
       </h1>
+      <h2>
+        The link to this on GitHub can be found in the footer as an SVG icon.
+      </h2>
       <style>
         {`
           @keyframes bounceEffect {
