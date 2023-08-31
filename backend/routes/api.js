@@ -1,17 +1,19 @@
+// backend/routes/api.js
+
 const express = require('express');
 const router = express.Router();
 const taskController = require('../controllers/taskController');
+// const userController = require('../controllers/userController');
+// const authenticateToken = require('../middleware');
 
-// GET all tasks
-router.get('/tasks', taskController.getAllTasks);
+// User routes
+// router.post('/register', userController.register);
+// router.post('/login', userController.login);
 
-// POST a new task
-router.post('/tasks', taskController.createTask);
-
-// PUT to update task completion status
-router.put('/tasks/:id', taskController.updateTask);
-
-// DELETE a task
-router.delete('/tasks/:id', taskController.deleteTask);
+// Protected task routes
+router.get('/tasks', authenticateToken, taskController.getAllTasks);
+router.post('/tasks', authenticateToken, taskController.createTask);
+router.put('/tasks/:id', authenticateToken, taskController.updateTask);
+router.delete('/tasks/:id', authenticateToken, taskController.deleteTask);
 
 module.exports = router;
