@@ -1,1 +1,1 @@
-To-Do List App. 
+This todo list app is written using React, Vite, and Tailwind CSS.
